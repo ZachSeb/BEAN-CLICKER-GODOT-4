@@ -1,7 +1,7 @@
 extends SettingsCheckButton
 
 
-func refresh():
+func refresh(_reset):
 	$CheckButton.button_pressed = Settings.vsync_enabled
 	
 

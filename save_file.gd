@@ -1,7 +1,7 @@
 extends Node
 
 const save_path = "user://save.dat"
-signal file_loaded
+signal file_loaded(reset: bool)
 
 
 func save_file():
@@ -18,7 +18,7 @@ func load_file():
 		
 		User.set_data(loaded_data)
 		Settings.set_data(loaded_data)
-		file_loaded.emit()
+		file_loaded.emit(false)
 
 		
 func reset_file():
@@ -26,7 +26,7 @@ func reset_file():
 	
 	User.set_data(default_variables)
 	Settings.set_data(default_variables)
-	file_loaded.emit()
+	file_loaded.emit(true)
 	
 	
 func create_user_data() -> Dictionary:
@@ -94,7 +94,3 @@ func get_user_default_data() -> Dictionary:
 		"TEXT_PARTICLES": true
 	}
 	return default_dict
-
-
-func _on_file_loaded():
-	print("biiiiasdfdasfdafdsa")

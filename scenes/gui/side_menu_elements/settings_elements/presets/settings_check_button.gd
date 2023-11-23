@@ -9,7 +9,7 @@ func _ready():
 	SaveFile.file_loaded.connect(refresh)
 	
 	
-func refresh():
+func refresh(_reset):
 	print("refresh settings check button")
 	
 

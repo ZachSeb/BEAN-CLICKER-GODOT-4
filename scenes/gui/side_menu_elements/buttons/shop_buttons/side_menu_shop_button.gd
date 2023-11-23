@@ -16,7 +16,8 @@ var cost: int
 
 func _ready():
 	update_state()
-	User.connect("beans_stats_changed", update_state)
+	User.beans_stats_changed.connect(update_state)
+	SaveFile.file_loaded.connect(reset_stats)
 	
 	$".".button_down.connect(try_purchase)
 	
@@ -58,6 +59,15 @@ func try_purchase() -> void:
 func update_state() -> void:
 	$Rects/DarkenRect.visible = false if User.beans >= cost else true
 	$SideInfo.update_state()
+	
+
+func reset_stats(reset):
+	if reset:
+		cost = base_cost
+		$CostText/Label.text = str(cost)
+		
+		owned_buildings = 0
+		update_state()
 
 
 func _on_mouse_entered():

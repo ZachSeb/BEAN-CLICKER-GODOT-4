@@ -67,6 +67,7 @@ func evaluate_beans_per_second() -> int:
 
 
 func evaluate_beans_per_click() -> int:
+	print('hi')
 	var return_value = 0
 	var side_menu_shop_buttons = get_tree().get_nodes_in_group("SideMenuShopButton")
 	
