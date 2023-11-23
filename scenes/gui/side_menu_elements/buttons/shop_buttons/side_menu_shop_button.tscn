@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bobpbfmnlb4b8"]
+[gd_scene load_steps=11 format=3 uid="uid://bobpbfmnlb4b8"]
 
 [ext_resource type="Texture2D" uid="uid://dykbmiswffmr3" path="res://graphics/sprites/menu_slots/auto_clicker.png" id="1_wh018"]
 [ext_resource type="Script" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.gd" id="2_jtuqr"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="4_i0edj"]
 [ext_resource type="AudioStream" uid="uid://1jefdx8bi2jh" path="res://sounds/sfx/buy/buy.wav" id="5_efarb"]
 [ext_resource type="AudioStream" uid="uid://dr6epeq7eiotu" path="res://sounds/sfx/buy/buy_reject.wav" id="6_gahn4"]
+[ext_resource type="PackedScene" uid="uid://bbl11xy3wwj7v" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_info.tscn" id="7_4fihe"]
 
 [sub_resource type="Animation" id="Animation_5ub0k"]
 resource_name = "deny"
@@ -145,3 +146,14 @@ bus = &"SFX"
 [node name="Deny" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_gahn4")
 bus = &"SFX"
+
+[node name="SideInfo" parent="." instance=ExtResource("7_4fihe")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 24.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

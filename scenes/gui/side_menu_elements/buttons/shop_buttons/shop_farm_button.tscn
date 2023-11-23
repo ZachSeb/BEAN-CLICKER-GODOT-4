@@ -6,5 +6,6 @@
 [node name="ShopFarmButton" instance=ExtResource("1_fwpys")]
 texture_normal = ExtResource("2_00gbu")
 button_type = 1
+title_name = "Farm"
 base_cost = 1000
 building_production_num = 20

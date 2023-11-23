@@ -6,5 +6,6 @@
 [node name="ShopBeanMineButton" instance=ExtResource("1_qryp7")]
 texture_normal = ExtResource("2_yy7fm")
 button_type = 1
+title_name = "Bean Mine"
 base_cost = 15000
 building_production_num = 100

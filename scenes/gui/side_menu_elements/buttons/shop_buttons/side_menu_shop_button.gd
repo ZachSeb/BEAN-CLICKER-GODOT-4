@@ -2,6 +2,7 @@ extends TextureButton
 class_name SideMenuShopButton
 
 @export_enum("Per Click", "Per Second") var button_type: int
+@export var title_name: String
 @export var base_cost: int
 
 # how much beans a building produces (use for Per Second)
@@ -14,6 +15,7 @@ var owned_buildings: int = 0
 var cost: int
 
 func _ready():
+	update_state()
 	User.connect("beans_stats_changed", update_state)
 	
 	$".".button_down.connect(try_purchase)
@@ -55,4 +57,19 @@ func try_purchase() -> void:
 
 func update_state() -> void:
 	$Rects/DarkenRect.visible = false if User.beans >= cost else true
+	$SideInfo.update_state()
 
+
+func _on_mouse_entered():
+	$SideInfo.visible = true
+
+
+func _on_mouse_exited():
+	$SideInfo.visible = false
+	
+
+func _process(_delta):
+	var local_mouse_pos_y = $".".get_local_mouse_position().y
+	
+	$SideInfo.anchor_top = local_mouse_pos_y / size.y
+	$SideInfo.anchor_bottom = $SideInfo.anchor_top

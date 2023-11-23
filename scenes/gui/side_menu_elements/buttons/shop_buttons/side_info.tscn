@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbl11xy3wwj7v"]
+[gd_scene load_steps=3 format=3 uid="uid://bbl11xy3wwj7v"]
 
 [ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="1_3ic28"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_info.gd" id="1_nhiuu"]
 
 [node name="SideInfo" type="Control"]
+custom_minimum_size = Vector2(260, 110)
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -55.0
 offset_right = 260.0
-offset_bottom = 110.0
+offset_bottom = 55.0
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_nhiuu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -15,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.290196)
+color = Color(0, 0, 0, 0.572549)
 
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 1
