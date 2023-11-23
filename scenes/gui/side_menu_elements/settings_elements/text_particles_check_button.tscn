@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx5iyy6denibo"]
+[gd_scene load_steps=3 format=3 uid="uid://dx5iyy6denibo"]
 
 [ext_resource type="PackedScene" uid="uid://djsqmm45dxogr" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_check_button.tscn" id="1_6j71u"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/text_particles_check_button.gd" id="2_1madk"]
 
 [node name="TextParticlesCheckButton" instance=ExtResource("1_6j71u")]
+script = ExtResource("2_1madk")
 
 [node name="Label" parent="." index="2"]
 rotation = -0.000214178
