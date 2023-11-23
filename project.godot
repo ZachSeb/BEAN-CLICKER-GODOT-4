@@ -16,7 +16,7 @@ run/main_scene="res://scenes/levels/clicker_level.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="BeanClickerGodot"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [audio]
 
@@ -50,3 +50,5 @@ click={
 [rendering]
 
 renderer/rendering_method="mobile"
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/screen_space_aa=1
