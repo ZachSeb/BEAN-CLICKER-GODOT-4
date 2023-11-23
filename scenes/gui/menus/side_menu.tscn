@@ -1,0 +1,371 @@
+[gd_scene load_steps=27 format=3 uid="uid://c1c5tcih7m31j"]
+
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="1_i08l8"]
+[ext_resource type="Script" path="res://scenes/gui/menus/side_menu.gd" id="1_nvw2w"]
+[ext_resource type="PackedScene" uid="uid://6a8dhg3nj3l2" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_cursor_button.tscn" id="2_1w61d"]
+[ext_resource type="ButtonGroup" uid="uid://bdb6gqg1p5art" path="res://scenes/gui/side_menu_elements/buttons/button_groups/tab_buttons.tres" id="2_4d2kr"]
+[ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="5_0ooia"]
+[ext_resource type="PackedScene" uid="uid://bswid0h7fhblc" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_auto_clicker_button.tscn" id="5_df5lf"]
+[ext_resource type="PackedScene" uid="uid://61aytj55m2gh" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_bean_farmer_button.tscn" id="6_5qr2e"]
+[ext_resource type="PackedScene" uid="uid://dhup07crwmafx" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_farm_button.tscn" id="7_uddhx"]
+[ext_resource type="PackedScene" uid="uid://d3ipups12icjy" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_bean_mine_button.tscn" id="8_rt5by"]
+[ext_resource type="PackedScene" uid="uid://lgq6scn0oxmw" path="res://scenes/gui/side_menu_elements/settings_elements/master_volume_slider.tscn" id="10_qduka"]
+[ext_resource type="PackedScene" uid="uid://scvacxxi50tn" path="res://scenes/gui/side_menu_elements/settings_elements/music_volume_slider.tscn" id="11_3v2v4"]
+[ext_resource type="PackedScene" uid="uid://dntxktwq6fxnw" path="res://scenes/gui/side_menu_elements/settings_elements/sfx_volume_slider.tscn" id="12_qv5j8"]
+[ext_resource type="PackedScene" uid="uid://dd5fn8x6uu1f1" path="res://scenes/gui/side_menu_elements/settings_elements/display_mode_drop_down.tscn" id="13_eio7n"]
+[ext_resource type="PackedScene" uid="uid://dw8t182ugtnxq" path="res://scenes/gui/side_menu_elements/settings_elements/vsync_check_button.tscn" id="13_ndox6"]
+[ext_resource type="PackedScene" uid="uid://hajw4prg425d" path="res://scenes/gui/side_menu_elements/settings_elements/display_fps_check_button.tscn" id="13_ohmea"]
+[ext_resource type="PackedScene" uid="uid://jmth0u10ckri" path="res://scenes/gui/side_menu_elements/settings_elements/bean_particles_check_button.tscn" id="16_g1x5c"]
+[ext_resource type="PackedScene" uid="uid://dx5iyy6denibo" path="res://scenes/gui/side_menu_elements/settings_elements/text_particles_check_button.tscn" id="17_ac8i0"]
+[ext_resource type="PackedScene" uid="uid://dk0u30dh01w1e" path="res://scenes/gui/menus/top_menu.tscn" id="17_fxsrb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq1r6"]
+bg_color = Color(0.345098, 0.286275, 0.184314, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khyct"]
+bg_color = Color(0.254902, 0.207843, 0.129412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x46a2"]
+bg_color = Color(0.0941176, 0.0745098, 0.0352941, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4xxy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m32w"]
+bg_color = Color(0.611765, 0.427451, 0.25098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn7ee"]
+bg_color = Color(0.443137, 0.301961, 0.164706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvaby"]
+bg_color = Color(0.145098, 0.0862745, 0.0313726, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_poymq"]
+resource_name = "TabButtons"
+
+[node name="SideMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.315
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_nvw2w")
+tab_group = ExtResource("2_4d2kr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.137255, 0.105882, 1)
+
+[node name="MenuStates" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shop" type="Control" parent="MenuStates"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuStates/Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("1_i08l8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuStates/Shop/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ShopAutoClickerButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("5_df5lf")]
+layout_mode = 2
+mouse_filter = 1
+base_cost = 15
+
+[node name="ShopCursorButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("2_1w61d")]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+
+[node name="ShopBeanFarmerButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("6_5qr2e")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ShopFarmButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("7_uddhx")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ShopBeanMineButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("8_rt5by")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuStates/Shop/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Upgrades" type="Control" parent="MenuStates"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuStates/Upgrades"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("1_i08l8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuStates/Upgrades/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuStates/Upgrades/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/line_separation = -6
+theme_override_fonts/normal_font = ExtResource("5_0ooia")
+theme_override_fonts/bold_font = ExtResource("5_0ooia")
+theme_override_fonts/italics_font = ExtResource("5_0ooia")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+bbcode_enabled = true
+text = "[center]Use your fertilizer to upgrade your stats using the options below! "
+fit_content = true
+
+[node name="Control" type="Control" parent="MenuStates/Upgrades/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="MenuStates/Upgrades/ScrollContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.231373, 0.207843, 0.172549, 1)
+
+[node name="Settings" type="Control" parent="MenuStates"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuStates/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("1_i08l8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuStates/Settings/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="GeneralLabel" type="Label" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 35
+text = "General"
+
+[node name="ExitButton" type="Button" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_oq1r6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_khyct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x46a2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v4xxy")
+action_mode = 0
+text = "EXIT"
+
+[node name="SaveButton" type="Button" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_oq1r6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_khyct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x46a2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v4xxy")
+action_mode = 0
+text = "SAVE DATA"
+
+[node name="LoadButton" type="Button" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_oq1r6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_khyct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x46a2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v4xxy")
+action_mode = 0
+text = "LOAD DATA"
+
+[node name="ResetButton" type="Button" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5m32w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bn7ee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mvaby")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v4xxy")
+action_mode = 0
+text = "RESET DATA"
+
+[node name="AudioLabel" type="Label" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 35
+text = "Audio      "
+
+[node name="MasterVolumeSlider" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("10_qduka")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MusicVolumeSlider" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("11_3v2v4")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="SFXVolumeSlider" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("12_qv5j8")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VideoLabel" type="Label" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 35
+text = "Video"
+
+[node name="DisplayModeDropDown" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("13_eio7n")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VSyncCheckButton" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("13_ndox6")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="DisplayFPSCheckButton" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("13_ohmea")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="GraphicsLabel" type="Label" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_0ooia")
+theme_override_font_sizes/font_size = 35
+text = "Graphics"
+
+[node name="BeanParticlesCheckButton" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("16_g1x5c")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="TextParticlesCheckButton" parent="MenuStates/Settings/ScrollContainer/VBoxContainer" instance=ExtResource("17_ac8i0")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuStates/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Achievements" type="Control" parent="MenuStates"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopMenu" parent="." instance=ExtResource("17_fxsrb")]
+layout_mode = 1
+tab_group = SubResource("ButtonGroup_poymq")
+
+[connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="change_state" from="TopMenu" to="." method="_on_top_menu_change_state"]

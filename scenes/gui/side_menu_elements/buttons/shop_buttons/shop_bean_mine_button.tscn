@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ipups12icjy"]
+
+[ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_qryp7"]
+[ext_resource type="Texture2D" uid="uid://ddlysxc2m8rb0" path="res://graphics/sprites/menu_slots/bean_mine.png" id="2_yy7fm"]
+
+[node name="ShopBeanMineButton" instance=ExtResource("1_qryp7")]
+texture_normal = ExtResource("2_yy7fm")
+button_type = 1
+base_cost = 15000
+building_production_num = 100

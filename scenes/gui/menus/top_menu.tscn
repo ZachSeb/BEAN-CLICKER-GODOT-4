@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://dk0u30dh01w1e"]
+
+[ext_resource type="Script" path="res://scenes/gui/menus/top_menu.gd" id="1_si3jv"]
+[ext_resource type="ButtonGroup" uid="uid://bdb6gqg1p5art" path="res://scenes/gui/side_menu_elements/buttons/button_groups/tab_buttons.tres" id="2_bm1mj"]
+[ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="3_uhpuh"]
+[ext_resource type="Texture2D" uid="uid://cmdot7cj3u16m" path="res://graphics/sprites/beans/bean_fertilizer.png" id="4_l65g7"]
+[ext_resource type="Texture2D" uid="uid://bwe2nnnj3avbq" path="res://graphics/closed.png" id="5_ts3d0"]
+[ext_resource type="Texture2D" uid="uid://d2652pkkmkvui" path="res://graphics/open.png" id="6_6vh3i"]
+[ext_resource type="Texture2D" uid="uid://du53a1k4welqd" path="res://graphics/sprites/top_menu_tabs/icons/1.png" id="7_dgheg"]
+[ext_resource type="Texture2D" uid="uid://bos7fcch842yp" path="res://graphics/sprites/top_menu_tabs/icons/2.png" id="8_kc8ei"]
+[ext_resource type="Texture2D" uid="uid://01t6d8gl3oma" path="res://graphics/sprites/top_menu_tabs/icons/3.png" id="9_ujiig"]
+[ext_resource type="Texture2D" uid="uid://bm14jttdtwxt0" path="res://graphics/sprites/top_menu_tabs/icons/4.png" id="10_0yej2"]
+[ext_resource type="AudioStream" uid="uid://4hawgqa2uxwv" path="res://sounds/sfx/tab_switch.wav" id="11_1ru32"]
+
+[node name="TopMenu" type="Control"]
+custom_minimum_size = Vector2(283.5, 0)
+layout_mode = 3
+anchor_right = 0.315
+anchor_bottom = 0.2
+mouse_filter = 2
+script = ExtResource("1_si3jv")
+tab_group = ExtResource("2_bm1mj")
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.141176, 0.121569, 0.0901961, 1)
+
+[node name="State" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.247059, 0.211765, 1)
+
+[node name="Label" type="Label" parent="State"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_uhpuh")
+theme_override_font_sizes/font_size = 35
+text = "Bean Shop"
+vertical_alignment = 1
+
+[node name="FertilizerCount" type="HBoxContainer" parent="State"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 0.99
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -1
+alignment = 2
+
+[node name="Label" type="Label" parent="State/FertilizerCount"]
+layout_mode = 2
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("3_uhpuh")
+theme_override_font_sizes/font_size = 30
+text = "16"
+
+[node name="TextureRect" type="TextureRect" parent="State/FertilizerCount"]
+layout_mode = 2
+texture = ExtResource("4_l65g7")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tabs" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.6
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Shop" type="TextureButton" parent="Tabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+button_group = ExtResource("2_bm1mj")
+texture_normal = ExtResource("5_ts3d0")
+texture_pressed = ExtResource("6_6vh3i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="Tabs/Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.19
+anchor_right = 1.0
+anchor_bottom = 0.94
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_dgheg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Upgrades" type="TextureButton" parent="Tabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_bm1mj")
+texture_normal = ExtResource("5_ts3d0")
+texture_pressed = ExtResource("6_6vh3i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="Tabs/Upgrades"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_kc8ei")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Settings" type="TextureButton" parent="Tabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_bm1mj")
+texture_normal = ExtResource("5_ts3d0")
+texture_pressed = ExtResource("6_6vh3i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="Tabs/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_ujiig")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Achievements" type="TextureButton" parent="Tabs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_bm1mj")
+texture_normal = ExtResource("5_ts3d0")
+texture_pressed = ExtResource("6_6vh3i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="Tabs/Achievements"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_0yej2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TabSwitchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_1ru32")

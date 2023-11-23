@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bswid0h7fhblc"]
+
+[ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_dhmby"]
+
+[node name="ShopAutoClickerButton" instance=ExtResource("1_dhmby")]
+button_type = 1
+building_production_num = 1

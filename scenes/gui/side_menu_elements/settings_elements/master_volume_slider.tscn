@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://lgq6scn0oxmw"]
+
+[ext_resource type="PackedScene" uid="uid://ceykx0bs41tdc" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_slider.tscn" id="1_40feb"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/master_volume_slider.gd" id="2_o7htp"]
+
+[node name="MasterVolumeSlider" instance=ExtResource("1_40feb")]
+script = ExtResource("2_o7htp")
+
+[node name="HSlider" parent="." index="1"]
+value = 1.0
+
+[node name="Label" parent="." index="2"]
+text = "Master Volume"

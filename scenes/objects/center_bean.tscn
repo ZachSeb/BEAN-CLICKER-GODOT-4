@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://o5kfvky6rqyu"]
+
+[ext_resource type="Script" path="res://scenes/objects/center_bean.gd" id="1_j6fy4"]
+[ext_resource type="Script" path="res://scenes/objects/Shines.gd" id="2_4hxs0"]
+[ext_resource type="Texture2D" uid="uid://cjp8x3el5x3f7" path="res://graphics/sprites/beans/shine.png" id="3_fsoc4"]
+[ext_resource type="Texture2D" uid="uid://c0upy7k5i4vhe" path="res://graphics/sprites/beans/bean.png" id="4_8d7dn"]
+[ext_resource type="AudioStream" uid="uid://dooqq8uqcb7fl" path="res://sounds/sfx/bean_up.wav" id="6_btunp"]
+
+[sub_resource type="Animation" id="Animation_g34w0"]
+resource_name = "rotate_bob"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-1.75, -1.75, -1.75),
+"update": 0,
+"values": [-0.0872665, 0.0872665, -0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bvm1o"]
+_data = {
+"rotate_bob": SubResource("Animation_g34w0")
+}
+
+[node name="CenterBean" type="Control"]
+layout_mode = 3
+anchor_left = 0.315
+anchor_top = 0.233
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j6fy4")
+
+[node name="Bean" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shines" type="Control" parent="Bean"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_4hxs0")
+
+[node name="Shine1" type="TextureRect" parent="Bean/Shines"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_fsoc4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Shine2" type="TextureRect" parent="Bean/Shines"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_fsoc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BeanButton" type="TextureButton" parent="Bean"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -109.0
+offset_right = 77.5
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+pivot_offset = Vector2(77.5, 109)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_8d7dn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bean/BeanButton"]
+autoplay = "rotate_bob"
+libraries = {
+"": SubResource("AnimationLibrary_bvm1o")
+}
+
+[node name="Markers" type="Node2D" parent="Bean"]
+position = Vector2(101.5, 4)
+
+[node name="Marker2D" type="Marker2D" parent="Bean/Markers"]
+position = Vector2(195, 151)
+
+[node name="Marker2D2" type="Marker2D" parent="Bean/Markers"]
+position = Vector2(160, 165)
+
+[node name="Marker2D3" type="Marker2D" parent="Bean/Markers"]
+position = Vector2(231, 166)
+
+[node name="TextParticles" type="Node2D" parent="."]
+position = Vector2(-283.5, -120)
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_btunp")
+bus = &"SFX"
+
+[connection signal="button_down" from="Bean/BeanButton" to="." method="_on_bean_button_button_down"]
+[connection signal="mouse_entered" from="Bean/BeanButton" to="." method="_on_bean_button_mouse_entered"]
+[connection signal="mouse_exited" from="Bean/BeanButton" to="." method="_on_bean_button_mouse_exited"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dntxktwq6fxnw"]
+
+[ext_resource type="PackedScene" uid="uid://ceykx0bs41tdc" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_slider.tscn" id="1_i4ve6"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/sfx_volume_slider.gd" id="2_vb0ns"]
+
+[node name="SFXVolumeSlider" instance=ExtResource("1_i4ve6")]
+script = ExtResource("2_vb0ns")
+
+[node name="HSlider" parent="." index="1"]
+value = 1.0
+
+[node name="Label" parent="." index="2"]
+text = "SFX Volume"

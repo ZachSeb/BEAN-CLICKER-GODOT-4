@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd5fn8x6uu1f1"]
+
+[ext_resource type="PackedScene" uid="uid://77cl0k2rvmrl" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_drop_down.tscn" id="1_aidek"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/display_mode_drop_down.gd" id="2_s7rcg"]
+
+[node name="DisplayModeDropDown" instance=ExtResource("1_aidek")]
+script = ExtResource("2_s7rcg")
+
+[node name="Label" parent="." index="1"]
+text = "Display Mode"
+
+[node name="OptionButton" parent="." index="2"]
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2

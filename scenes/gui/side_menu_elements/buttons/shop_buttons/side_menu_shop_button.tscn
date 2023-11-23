@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://bobpbfmnlb4b8"]
+
+[ext_resource type="Texture2D" uid="uid://dykbmiswffmr3" path="res://graphics/sprites/menu_slots/auto_clicker.png" id="1_wh018"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.gd" id="2_jtuqr"]
+[ext_resource type="Texture2D" uid="uid://c0upy7k5i4vhe" path="res://graphics/sprites/beans/bean.png" id="3_6ty64"]
+[ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="4_i0edj"]
+[ext_resource type="AudioStream" uid="uid://1jefdx8bi2jh" path="res://sounds/sfx/buy/buy.wav" id="5_efarb"]
+[ext_resource type="AudioStream" uid="uid://dr6epeq7eiotu" path="res://sounds/sfx/buy/buy_reject.wav" id="6_gahn4"]
+
+[sub_resource type="Animation" id="Animation_5ub0k"]
+resource_name = "deny"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fvsuh"]
+resource_name = "purchase"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PurchaseRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ws3s2"]
+_data = {
+"deny": SubResource("Animation_5ub0k"),
+"purchase": SubResource("Animation_fvsuh")
+}
+
+[node name="SideMenuShopButton" type="TextureButton" groups=["SideMenuShopButton"]]
+offset_right = 260.0
+offset_bottom = 110.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_wh018")
+script = ExtResource("2_jtuqr")
+
+[node name="BeanImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 0.96
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_6ty64")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CostText" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.75
+anchor_right = 0.9
+anchor_bottom = 0.96
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CostText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_i0edj")
+theme_override_font_sizes/font_size = 25
+text = "72332"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Rects" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rects"]
+root_node = NodePath("../DenyRect")
+libraries = {
+"": SubResource("AnimationLibrary_ws3s2")
+}
+
+[node name="DarkenRect" type="ColorRect" parent="Rects"]
+visible = false
+modulate = Color(1, 1, 1, 0.309804)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PurchaseRect" type="ColorRect" parent="Rects"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DenyRect" type="ColorRect" parent="Rects"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.313726, 0.313726, 1)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Purchase" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_efarb")
+bus = &"SFX"
+
+[node name="Deny" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_gahn4")
+bus = &"SFX"

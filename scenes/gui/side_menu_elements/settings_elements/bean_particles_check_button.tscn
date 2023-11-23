@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmth0u10ckri"]
+
+[ext_resource type="PackedScene" uid="uid://djsqmm45dxogr" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_check_button.tscn" id="1_lqjgu"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/bean_particles_check_button.gd" id="2_pn8dm"]
+
+[node name="BeanParticlesCheckButton" instance=ExtResource("1_lqjgu")]
+script = ExtResource("2_pn8dm")
+
+[node name="Label" parent="." index="2"]
+text = "Bean Particles"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfwojk37ldidu"]
+
+[ext_resource type="Texture2D" uid="uid://bin4q1lo4g0aq" path="res://graphics/backgrounds/grain_texture.jpg" id="1_4dbn1"]
+[ext_resource type="Texture2D" uid="uid://bk3blpl7tpb1b" path="res://graphics/backgrounds/striped_background.png" id="2_bysd1"]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.701961, 0.639216, 0.545098, 1)
+
+[node name="GrainTexture" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.0666667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4dbn1")
+expand_mode = 1
+
+[node name="Stripes" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.184314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bysd1")
+expand_mode = 1

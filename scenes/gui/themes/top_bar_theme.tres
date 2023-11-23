@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://fwjw77asopv1"]
+
+[ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="1_fy1uu"]
+
+[resource]
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("1_fy1uu")

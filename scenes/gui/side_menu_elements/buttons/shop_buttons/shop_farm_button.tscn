@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhup07crwmafx"]
+
+[ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_fwpys"]
+[ext_resource type="Texture2D" uid="uid://dvkdvr8vexa70" path="res://graphics/sprites/menu_slots/farm.png" id="2_00gbu"]
+
+[node name="ShopFarmButton" instance=ExtResource("1_fwpys")]
+texture_normal = ExtResource("2_00gbu")
+button_type = 1
+base_cost = 1000
+building_production_num = 20

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://6a8dhg3nj3l2"]
+
+[ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_nx8yp"]
+[ext_resource type="Texture2D" uid="uid://3pukww34d5ev" path="res://graphics/sprites/menu_slots/cursor.png" id="2_ybkwb"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/shop_cursor_button.gd" id="3_nspkq"]
+
+[node name="ShopCursorButton" instance=ExtResource("1_nx8yp")]
+texture_normal = ExtResource("2_ybkwb")
+script = ExtResource("3_nspkq")
+base_cost = 100
+production_per_click = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hajw4prg425d"]
+
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/display_fps_check_button.gd" id="1_1amp4"]
+[ext_resource type="PackedScene" uid="uid://djsqmm45dxogr" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_check_button.tscn" id="1_qo7bv"]
+
+[node name="DisplayFPSCheckButton" instance=ExtResource("1_qo7bv")]
+script = ExtResource("1_1amp4")
+
+[node name="Label" parent="." index="2"]
+text = "Display FPS"
