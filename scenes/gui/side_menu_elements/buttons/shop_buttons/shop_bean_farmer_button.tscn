@@ -6,5 +6,6 @@
 [node name="ShopBeanFarmerButton" instance=ExtResource("1_i3df7")]
 texture_normal = ExtResource("2_7hi2m")
 button_type = 1
+title_name = "Bean Farmer"
 base_cost = 500
 building_production_num = 10
