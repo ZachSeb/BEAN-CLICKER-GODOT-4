@@ -8,3 +8,4 @@ texture_normal = ExtResource("2_ybkwb")
 title_name = "Cursor"
 base_cost = 100
 building_production_num = 15
+production_per_click = 1

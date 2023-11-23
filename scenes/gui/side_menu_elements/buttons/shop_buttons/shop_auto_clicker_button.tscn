@@ -5,4 +5,5 @@
 [node name="ShopAutoClickerButton" instance=ExtResource("1_dhmby")]
 button_type = 1
 title_name = "Auto Clicker"
+base_cost = 15
 building_production_num = 1

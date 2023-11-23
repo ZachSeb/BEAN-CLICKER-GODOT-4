@@ -17,5 +17,5 @@ func on_slider_changed(value: float) -> void:
 	print(value)
 
 
-func refresh():
+func refresh(_reset):
 	print("refresh")

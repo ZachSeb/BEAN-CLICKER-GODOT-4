@@ -62,7 +62,7 @@ corner_radius_top_left = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_5pm1o"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_brl33"]
 resource_name = "TabButtons"
 
 [node name="SideMenu" type="Control"]
@@ -124,7 +124,6 @@ theme_override_constants/separation = 5
 [node name="ShopAutoClickerButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("5_df5lf")]
 layout_mode = 2
 mouse_filter = 1
-base_cost = 15
 
 [node name="ShopCursorButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("2_1w61d")]
 layout_mode = 2
@@ -364,7 +363,7 @@ mouse_filter = 2
 
 [node name="TopMenu" parent="." instance=ExtResource("17_fxsrb")]
 layout_mode = 1
-tab_group = SubResource("ButtonGroup_5pm1o")
+tab_group = SubResource("ButtonGroup_brl33")
 
 [connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

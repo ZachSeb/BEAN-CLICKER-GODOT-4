@@ -1,6 +1,6 @@
 extends SettingsDropDown
 
-func refresh():
+func refresh(_reset):
 	$OptionButton.selected = Settings.display_mode
 
 
