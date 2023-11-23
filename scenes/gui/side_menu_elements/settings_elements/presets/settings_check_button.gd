@@ -6,7 +6,7 @@ func _ready():
 	var check_button = get_node("CheckButton")
 	
 	check_button.pressed.connect(on_check_button_pressed_parent)
-	SaveFile.connect("file_loaded", refresh)
+	SaveFile.file_loaded.connect(refresh)
 	
 	
 func refresh():

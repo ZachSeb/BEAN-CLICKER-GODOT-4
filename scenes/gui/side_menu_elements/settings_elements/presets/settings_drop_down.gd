@@ -4,7 +4,7 @@ class_name SettingsDropDown
 func _ready():
 	var dropdown = get_node("OptionButton")
 	dropdown.item_selected.connect(on_item_selected)
-	SaveFile.connect("file_loaded", refresh)
+	SaveFile.file_loaded.connect(refresh)
 	
 	
 func refresh():

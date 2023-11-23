@@ -57,8 +57,8 @@ func create_user_data() -> Dictionary:
 		"DISPLAY_FPS" : Settings.display_fps,
 		
 		# graphics
-		"BEAN_PARTICLES": true,
-		"TEXT_PARTICLES": true
+		"BEAN_PARTICLES": Settings.bean_particles,
+		"TEXT_PARTICLES": Settings.text_particles
 	}
 	return save_dict
 
