@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_i3df7"]
 [ext_resource type="Texture2D" uid="uid://d0bfs6inn4frv" path="res://graphics/sprites/menu_slots/bean_farmer.png" id="2_7hi2m"]
 
-[node name="ShopBeanFarmerButton" instance=ExtResource("1_i3df7")]
+[node name="ShopBeanFarmerButton" groups=["Persist"] instance=ExtResource("1_i3df7")]
 texture_normal = ExtResource("2_7hi2m")
 button_type = 1
 title_name = "Bean Farmer"

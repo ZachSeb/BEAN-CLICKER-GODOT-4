@@ -12,12 +12,32 @@ class_name SideMenuShopButton
 
 
 var owned_buildings: int = 0
-var cost: int
+var cost: int:
+	get: return cost
+	set(value):
+		cost = value
+		update_state()
+
+
+func save_stats() -> Dictionary:
+	var save_dict = {
+		"filename" : $".".get_path(),
+		"parent" : get_parent().get_path(),
+		
+		"cost" : cost,
+		"base_cost" : base_cost,
+		"owned_buildings" : owned_buildings,
+		
+		"building_production_num" : building_production_num,
+		"production_per_click" : production_per_click
+	}
+	return save_dict
+	
 
 func _ready():
 	update_state()
 	User.beans_stats_changed.connect(update_state)
-	SaveFile.file_loaded.connect(reset_stats)
+	SaveFile.file_loaded.connect(update_state)
 	
 	$".".button_down.connect(try_purchase)
 	
@@ -34,7 +54,6 @@ func try_purchase() -> void:
 		$Sounds/Purchase.play()
 
 		cost = ceili(base_cost * 1.15 * owned_buildings)
-		$CostText/Label.text = str(cost)
 		
 		# flash tween
 		var purchase_tween = create_tween()
@@ -57,17 +76,9 @@ func try_purchase() -> void:
 	
 
 func update_state() -> void:
+	$CostText/Label.text = str(cost)
 	$Rects/DarkenRect.visible = false if User.beans >= cost else true
 	$SideInfo.update_state()
-	
-
-func reset_stats(reset):
-	if reset:
-		cost = base_cost
-		$CostText/Label.text = str(cost)
-		
-		owned_buildings = 0
-		update_state()
 
 
 func _on_mouse_entered():

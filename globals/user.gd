@@ -41,18 +41,37 @@ var default_variables = SaveFile.get_user_default_data()
 		fertilizer_changed.emit()
 
 
+#
+#func set_data(loaded_data: Dictionary):
+#	beans = loaded_data.BEANS
+#	beans_per_click = loaded_data.BEANS_PER_CLICK
+#	beans_per_second = loaded_data.BEANS_PER_SECOND
+#
+#	xp = loaded_data.XP
+#	xp_requirement = loaded_data.XP_REQUIREMENT
+#	xp_per_click = loaded_data.XP_PER_CLICK
+#	xp_per_building_purchase = loaded_data.XP_PER_BUILDING_PURCHASE
+#
+#	fertilizer = loaded_data.FERTILIZER
 
-func set_data(loaded_data: Dictionary):
-	beans = loaded_data.BEANS
-	beans_per_click = loaded_data.BEANS_PER_CLICK
-	beans_per_second = loaded_data.BEANS_PER_SECOND
-	
-	xp = loaded_data.XP
-	xp_requirement = loaded_data.XP_REQUIREMENT
-	xp_per_click = loaded_data.XP_PER_CLICK
-	xp_per_building_purchase = loaded_data.XP_PER_BUILDING_PURCHASE
-	
-	fertilizer = loaded_data.FERTILIZER
+
+func save_stats():
+	var save_dict = {
+		"filename" : $".".get_path(),
+		"parent" : get_parent().get_path(),
+		
+		"beans" : beans,
+		"beans_per_click" : beans_per_click,
+		"beans_per_second" : beans_per_second,
+		
+		"xp" : xp,
+		"xp_requirement" : xp_requirement,
+		"xp_per_click" : xp_per_click,
+		"xp_per_building_purchase" : xp_per_building_purchase,
+		
+		"fertilizer" : fertilizer
+	}
+	return save_dict
 
 
 func evaluate_beans_per_second() -> int:

@@ -53,18 +53,33 @@ signal toggle_particles_changed(particle: String)
 		toggle_particles_changed.emit("Text")
 
 
-func set_data(loaded_data: Dictionary):
-	master_volume = loaded_data.MASTER_VOLUME
-	music_volume = loaded_data.MUSIC_VOLUME
-	sfx_volume = loaded_data.SFX_VOLUME
-	
-	display_mode = loaded_data.DISPLAY_MODE
-	vsync_enabled = loaded_data.VSYNC_ENABLED
-	display_fps = loaded_data.DISPLAY_FPS
-	
-	bean_particles = loaded_data.BEAN_PARTICLES
-	text_particles = loaded_data.TEXT_PARTICLES
+#func set_data(loaded_data: Dictionary):
+#	master_volume = loaded_data.MASTER_VOLUME
+#	music_volume = loaded_data.MUSIC_VOLUME
+#	sfx_volume = loaded_data.SFX_VOLUME
+#
+#	display_mode = loaded_data.DISPLAY_MODE
+#	vsync_enabled = loaded_data.VSYNC_ENABLED
+#	display_fps = loaded_data.DISPLAY_FPS
+#
+#	bean_particles = loaded_data.BEAN_PARTICLES
+#	text_particles = loaded_data.TEXT_PARTICLES
 
+func save_stats():
+	var save_dict = {
+		"filename" : $".".get_path(),
+		"parent" : get_parent().get_path(),
+		
+		"master_volume" : master_volume,
+		"music_volume" : music_volume,
+		"sfx_volume" : sfx_volume,
+		"display_mode" : display_mode,
+		"vsync_enabled" : vsync_enabled,
+		"display_fps" : display_fps,
+		"bean_particles" : bean_particles,
+		"text_particles" : text_particles
+	}
+	return save_dict
 
 
 func _ready():
