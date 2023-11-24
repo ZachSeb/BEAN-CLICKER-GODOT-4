@@ -62,7 +62,7 @@ corner_radius_top_left = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_brl33"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_aclrm"]
 resource_name = "TabButtons"
 
 [node name="SideMenu" type="Control"]
@@ -138,7 +138,7 @@ mouse_filter = 1
 layout_mode = 2
 mouse_filter = 1
 
-[node name="ShopBeanMineButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" instance=ExtResource("8_rt5by")]
+[node name="ShopBeanMineButton" parent="MenuStates/Shop/ScrollContainer/VBoxContainer" groups=["Persist"] instance=ExtResource("8_rt5by")]
 layout_mode = 2
 mouse_filter = 1
 
@@ -363,7 +363,7 @@ mouse_filter = 2
 
 [node name="TopMenu" parent="." instance=ExtResource("17_fxsrb")]
 layout_mode = 1
-tab_group = SubResource("ButtonGroup_brl33")
+tab_group = SubResource("ButtonGroup_aclrm")
 
 [connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MenuStates/Settings/ScrollContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

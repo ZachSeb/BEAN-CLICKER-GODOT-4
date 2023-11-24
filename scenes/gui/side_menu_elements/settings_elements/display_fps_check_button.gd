@@ -1,6 +1,6 @@
 extends SettingsCheckButton
 
-func refresh(_reset):
+func refresh():
 	$CheckButton.button_pressed = Settings.display_fps
 
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_nx8yp"]
 [ext_resource type="Texture2D" uid="uid://3pukww34d5ev" path="res://graphics/sprites/menu_slots/cursor.png" id="2_ybkwb"]
 
-[node name="ShopCursorButton" instance=ExtResource("1_nx8yp")]
+[node name="ShopCursorButton" groups=["Persist"] instance=ExtResource("1_nx8yp")]
 texture_normal = ExtResource("2_ybkwb")
 title_name = "Cursor"
 base_cost = 100

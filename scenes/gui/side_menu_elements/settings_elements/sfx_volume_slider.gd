@@ -4,5 +4,5 @@ func on_slider_changed(value: float) -> void:
 	Settings.sfx_volume = value
 
 
-func refresh(_reset):
+func refresh():
 	$HSlider.value = Settings.sfx_volume

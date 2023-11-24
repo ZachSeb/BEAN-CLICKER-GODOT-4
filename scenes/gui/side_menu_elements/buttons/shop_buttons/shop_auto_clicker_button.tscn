@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bobpbfmnlb4b8" path="res://scenes/gui/side_menu_elements/buttons/shop_buttons/side_menu_shop_button.tscn" id="1_dhmby"]
 
-[node name="ShopAutoClickerButton" instance=ExtResource("1_dhmby")]
+[node name="ShopAutoClickerButton" groups=["Persist"] instance=ExtResource("1_dhmby")]
 button_type = 1
 title_name = "Auto Clicker"
 base_cost = 15
