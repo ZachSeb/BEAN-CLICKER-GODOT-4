@@ -1,9 +1,6 @@
 extends SettingsCheckButton
 
 
-func on_check_button_pressed_child():
-	Settings.bean_particles = $CheckButton.button_pressed
-
-
-func refresh():
-	$CheckButton.button_pressed = Settings.bean_particles
+# CHILD FUNCTION
+func on_check_button_toggled(state: bool) -> void:
+	SettingsSignals.toggle_particles_changed.emit("Bean", state)

@@ -6,5 +6,8 @@
 [node name="VSyncCheckButton" instance=ExtResource("1_5hjku")]
 script = ExtResource("2_5255u")
 
+[node name="CheckButton" parent="." index="1"]
+button_pressed = true
+
 [node name="Label" parent="." index="2"]
 text = "VSync"

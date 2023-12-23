@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://qm7ka0dgvc3h"]
 
-[ext_resource type="Script" path="res://Playlist.gd" id="1_pdk6m"]
+[ext_resource type="Script" path="res://sounds/Playlist.gd" id="1_pdk6m"]
 [ext_resource type="AudioStream" uid="uid://c5s3tdr7qnuep" path="res://sounds/music/b_e_a_n_s.wav" id="2_g3fqc"]
 [ext_resource type="AudioStream" uid="uid://etcksaashqkl" path="res://sounds/music/Evening_Nostalgy.mp3" id="3_hpny3"]
 [ext_resource type="AudioStream" uid="uid://rto27mdf2p6o" path="res://sounds/music/Hypnotic.mp3" id="4_qwagt"]

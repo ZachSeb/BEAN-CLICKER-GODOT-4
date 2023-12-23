@@ -6,6 +6,9 @@
 [node name="TextParticlesCheckButton" instance=ExtResource("1_6j71u")]
 script = ExtResource("2_1madk")
 
+[node name="CheckButton" parent="." index="1"]
+button_pressed = true
+
 [node name="Label" parent="." index="2"]
 rotation = -0.000214178
 text = "Text Particles"

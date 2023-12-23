@@ -1,22 +1,33 @@
 extends Control
 class_name SettingsCheckButton
 
+@onready var check_button = get_node("CheckButton")
+var checked
+
 
 func _ready():
-	var check_button = get_node("CheckButton")
+	checked = check_button.button_pressed
+	on_check_button_toggled(checked)
 	
-	check_button.pressed.connect(on_check_button_pressed_parent)
-	SaveFile.file_loaded.connect(refresh)
+	check_button.toggled.connect(func super_on_check_button_toggled(state):
+		checked = state
+		$CheckPressSFX.play()
+		on_check_button_toggled(state)
+	)
 	
-	
-func refresh():
-	print("refresh settings check button")
-	
+	SaveFile.file_loaded.connect(func super_file_loaded():
+		check_button.button_pressed = checked
+	)
 
-func on_check_button_pressed_parent():
-	$CheckPressSFX.play()
-	on_check_button_pressed_child()
+
+# CHILD FUNCTION
+func on_check_button_toggled(_state: bool) -> void:
+	pass
 
 
-func on_check_button_pressed_child():
-	print("custom function")
+func save_stats():
+	var save_dict = {
+		"filename" : $".".get_path(),
+		"checked" : checked
+	}
+	return save_dict

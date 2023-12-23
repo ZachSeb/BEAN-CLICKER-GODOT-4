@@ -4,18 +4,16 @@ signal beans_stats_changed
 signal xp_changed
 signal fertilizer_changed
 
-var default_variables = SaveFile.get_user_default_data()
-
 
 @export_category("Bean Variables")
-@export var beans_per_click: int = default_variables.BEANS_PER_CLICK
-@export var beans: int = default_variables.BEANS:
+@export var beans_per_click: int = 1
+@export var beans: int = 0:
 	get: return beans
 	set(value):
 		beans = value
 		beans_stats_changed.emit()
 	
-@export var beans_per_second: int = default_variables.BEANS_PER_SECOND:
+@export var beans_per_second: int = 0:
 	get: return beans_per_second
 	set(value):
 		beans_per_second = value
@@ -23,18 +21,18 @@ var default_variables = SaveFile.get_user_default_data()
 
 
 @export var xp_multiplier: float = 1.095
-@export var xp_requirement: float = default_variables.XP_REQUIREMENT
+@export var xp_requirement: float = 100
 
-@export var xp_per_click: float = default_variables.XP_PER_CLICK
-@export var xp_per_building_purchase: float = default_variables.XP_PER_BUILDING_PURCHASE
+@export var xp_per_click: float = 0.2
+@export var xp_per_building_purchase: float = 5
 
-@export var xp: float = default_variables.XP:
+@export var xp: float = 0:
 	get: return xp
 	set(value):
 		xp = value
 		xp_changed.emit()
 		
-@export var fertilizer: int = default_variables.FERTILIZER:
+@export var fertilizer: int = 0:
 	get: return fertilizer
 	set(value):
 		fertilizer = value

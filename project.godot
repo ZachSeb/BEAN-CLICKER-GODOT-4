@@ -15,18 +15,19 @@ config/description="click the b e a n"
 run/main_scene="res://scenes/levels/clicker_level.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="BeanClickerGodot"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.png"
 
 [audio]
 
-buses/default_bus_layout="res://sounds/main_bus.tres"
+buses/default_bus_layout="res://sounds/buses/main_bus.tres"
 
 [autoload]
 
 SaveFile="*res://save_file.gd"
 User="*res://scenes/user.tscn"
 Settings="*res://globals/settings.gd"
+SettingsSignals="*res://globals/settings_signals.gd"
 
 [display]
 

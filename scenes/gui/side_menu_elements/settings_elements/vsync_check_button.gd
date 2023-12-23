@@ -1,9 +1,9 @@
 extends SettingsCheckButton
 
 
-func refresh():
-	$CheckButton.button_pressed = Settings.vsync_enabled
-	
-
-func on_check_button_pressed_child():
-	Settings.vsync_enabled = $CheckButton.button_pressed
+# CHILD FUNCTION
+func on_check_button_toggled(state: bool) -> void:
+	if state:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

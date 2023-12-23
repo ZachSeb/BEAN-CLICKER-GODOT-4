@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_slider.gd" id="1_q3l3a"]
 [ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="1_w2p2f"]
 
-[node name="SettingsSlider" type="Control"]
+[node name="SettingsSlider" type="Control" groups=["Persist"]]
 custom_minimum_size = Vector2(260, 75)
 layout_mode = 3
 anchors_preset = 0

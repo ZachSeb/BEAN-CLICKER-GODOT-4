@@ -8,3 +8,9 @@ SOUND EFFECTS:
 Golden Bean Pickup Sound Effect - https://freesound.org/people/DWOBoyle/sounds/140382/ 
 - Trimmed sound effect, decreased speed by -15% (in Audacity)
 
+Fertilizer UP Sound Effect - https://freesound.org/people/IENBA/sounds/698768/
+- Trimmed each sound effect into its own file
+
+Dropdown Select Sound Effect - https://freesound.org/people/brandondelehoy/sounds/333433/
+- INSERT TEXT HERE
+

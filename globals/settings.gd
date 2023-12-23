@@ -68,7 +68,6 @@ signal toggle_particles_changed(particle: String)
 func save_stats():
 	var save_dict = {
 		"filename" : $".".get_path(),
-		"parent" : get_parent().get_path(),
 		
 		"master_volume" : master_volume,
 		"music_volume" : music_volume,
@@ -81,10 +80,12 @@ func save_stats():
 	}
 	return save_dict
 
-
+var counter = 0
 func _ready():
 	set_display_mode(display_mode)
 	toggle_vsync(vsync_enabled)
+	
+	counter += 1
 	
 
 func set_display_mode(value: int):

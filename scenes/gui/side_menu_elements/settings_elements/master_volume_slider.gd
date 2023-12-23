@@ -2,8 +2,8 @@ extends SettingsSlider
 
 
 func on_slider_changed(value: float) -> void:
-	Settings.master_volume = value
-
-
-func refresh():
-	$HSlider.value = Settings.master_volume
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)

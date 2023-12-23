@@ -5,6 +5,9 @@ signal on_bean_click
 const mini_bean_scene = preload("res://scenes/objects/mini_bean.tscn")
 const text_particle_scene = preload("res://scenes/objects/text_particle.tscn")
 
+var emit_bean_particles: bool = true
+var emit_text_particles: bool = true
+
 @onready var bean_button: TextureButton = $Bean/BeanButton
 
 @export_category("Tween Values")
@@ -21,20 +24,25 @@ const text_particle_scene = preload("res://scenes/objects/text_particle.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Settings.toggle_particles_changed.connect(on_toggle_particles_changed)
-	
+	SettingsSignals.toggle_particles_changed.connect(on_toggle_particles_changed)
 	bean_button.scale = Vector2(default_scale, default_scale)
 	
 	
-func on_toggle_particles_changed(particle: String):
-	if particle == "Bean" and not Settings.bean_particles:
-		for bean in $"../MiniBeans".get_children():
-			bean.queue_free()
-	
-	elif particle == "Text" and not Settings.text_particles:
-		for text in $TextParticles.get_children():
-			text.queue_free()
+func on_toggle_particles_changed(particle: String, value: bool):
+	if particle == "Bean":
+		emit_bean_particles = value
 		
+		if not value:
+			for bean in $"../MiniBeans".get_children():
+				bean.queue_free()
+	
+	elif particle == "Text":
+		emit_text_particles = value
+		
+		if not value:
+			for bean in $TextParticles.get_children():
+				bean.queue_free()
+				
 
 func _on_bean_button_mouse_entered():
 	var tween = get_tree().create_tween()
@@ -49,13 +57,13 @@ func _on_bean_button_mouse_exited():
 
 
 func _on_bean_button_button_down():
-	if Settings.bean_particles:
+	if emit_bean_particles:
 		var mini_bean = mini_bean_scene.instantiate()
 		var mini_bean_positions = $Bean/Markers.get_children()
 		mini_bean.position = mini_bean_positions.pick_random().global_position
 		$"../MiniBeans".add_child(mini_bean, true)
 	
-	if Settings.text_particles:
+	if emit_text_particles:
 		var text_particle = text_particle_scene.instantiate()
 		text_particle.position = get_global_mouse_position()
 		$TextParticles.add_child(text_particle, true)

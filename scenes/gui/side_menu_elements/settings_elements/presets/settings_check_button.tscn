@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bjvt65cn1k27y" path="res://graphics/fonts/ToonAround.otf" id="3_rbmss"]
 [ext_resource type="AudioStream" uid="uid://g3y2kp41otav" path="res://sounds/sfx/check_press.wav" id="4_j5dr0"]
 
-[node name="SettingsCheckButton" type="Control"]
+[node name="SettingsCheckButton" type="Control" groups=["Persist"]]
 custom_minimum_size = Vector2(260, 75)
 layout_mode = 3
 anchors_preset = 15

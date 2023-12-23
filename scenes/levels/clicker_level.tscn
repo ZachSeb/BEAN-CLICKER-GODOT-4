@@ -17,10 +17,10 @@ script = ExtResource("1_jjpxq")
 
 [node name="User" parent="." instance=ExtResource("6_j0cuc")]
 
-[node name="Settings" parent="User" instance=ExtResource("6_eo283")]
-
 [node name="Save" type="Node" parent="User"]
 script = ExtResource("1_0tll7")
+
+[node name="Settings" parent="User" instance=ExtResource("6_eo283")]
 
 [node name="Playlist" parent="." instance=ExtResource("6_4pqdu")]
 
