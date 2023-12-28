@@ -16,6 +16,7 @@ script = ExtResource("1_jjpxq")
 [node name="UI" parent="." instance=ExtResource("3_pl4xx")]
 
 [node name="User" parent="." instance=ExtResource("6_j0cuc")]
+xp_per_click = 20.0
 
 [node name="Save" type="Node" parent="User"]
 script = ExtResource("1_0tll7")

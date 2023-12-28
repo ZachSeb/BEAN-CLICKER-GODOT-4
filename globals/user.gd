@@ -39,20 +39,6 @@ signal fertilizer_changed
 		fertilizer_changed.emit()
 
 
-#
-#func set_data(loaded_data: Dictionary):
-#	beans = loaded_data.BEANS
-#	beans_per_click = loaded_data.BEANS_PER_CLICK
-#	beans_per_second = loaded_data.BEANS_PER_SECOND
-#
-#	xp = loaded_data.XP
-#	xp_requirement = loaded_data.XP_REQUIREMENT
-#	xp_per_click = loaded_data.XP_PER_CLICK
-#	xp_per_building_purchase = loaded_data.XP_PER_BUILDING_PURCHASE
-#
-#	fertilizer = loaded_data.FERTILIZER
-
-
 func save_stats():
 	var save_dict = {
 		"filename" : $".".get_path(),

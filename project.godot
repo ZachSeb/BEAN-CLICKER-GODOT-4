@@ -26,8 +26,8 @@ buses/default_bus_layout="res://sounds/buses/main_bus.tres"
 
 SaveFile="*res://save_file.gd"
 User="*res://scenes/user.tscn"
-Settings="*res://globals/settings.gd"
 SettingsSignals="*res://globals/settings_signals.gd"
+NumberUtils="*res://globals/number_utils.gd"
 
 [display]
 

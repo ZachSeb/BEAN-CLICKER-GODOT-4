@@ -30,7 +30,7 @@ func save_file():
 
 func load_file():
 	if not FileAccess.file_exists("user://savegame.save"):
-		return # Error! We don't have a save to load.
+		save_file()
 
 	# We need to revert the game state so we're not cloning objects
 	# during loading. This will vary wildly depending on the needs of a

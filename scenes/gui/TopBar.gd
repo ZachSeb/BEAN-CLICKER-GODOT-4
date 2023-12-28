@@ -6,12 +6,14 @@ extends Control
 func _ready():
 	change_counters()
 	User.connect("beans_stats_changed", change_counters)
-
-
+	
+	
 func change_counters():
-	beans_per_second_counter.text = str("PER SECOND: ", User.beans_per_second)
+	beans_per_second_counter.text = str("PER SECOND: ", NumberUtils.abbreviate_number(User.beans_per_second))
 	
 	if User.beans != 1:
-		bean_counter.text = str(User.beans, " BEANS")
+		bean_counter.text = str(NumberUtils.abbreviate_number(User.beans), " BEANS")
 	else:
-		bean_counter.text = str(User.beans, " BEAN")
+		bean_counter.text = str(NumberUtils.abbreviate_number(User.beans), " BEAN")
+		
+
