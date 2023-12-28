@@ -58,7 +58,6 @@ var default_variables = SaveFile.get_user_default_data()
 func save_stats():
 	var save_dict = {
 		"filename" : $".".get_path(),
-		"parent" : get_parent().get_path(),
 		
 		"beans" : beans,
 		"beans_per_click" : beans_per_click,

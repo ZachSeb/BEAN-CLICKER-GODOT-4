@@ -22,7 +22,6 @@ var cost: int:
 func save_stats() -> Dictionary:
 	var save_dict = {
 		"filename" : $".".get_path(),
-		"parent" : get_parent().get_path(),
 		
 		"cost" : cost,
 		"base_cost" : base_cost,

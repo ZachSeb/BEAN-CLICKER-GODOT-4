@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://scvacxxi50tn"]
+[gd_scene load_steps=3 format=3 uid="uid://8rbhdb8qh66t"]
 
-[ext_resource type="PackedScene" uid="uid://ceykx0bs41tdc" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_slider.tscn" id="1_weofk"]
-[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/music_volume_slider.gd" id="2_31n3p"]
+[ext_resource type="PackedScene" uid="uid://ceykx0bs41tdc" path="res://scenes/gui/side_menu_elements/settings_elements/presets/settings_slider.tscn" id="1_1kwhn"]
+[ext_resource type="Script" path="res://scenes/gui/side_menu_elements/settings_elements/music_volume_slider.gd" id="2_682rg"]
 
-[node name="MusicVolumeSlider" instance=ExtResource("1_weofk")]
-script = ExtResource("2_31n3p")
+[node name="MusicVolumeSlider" instance=ExtResource("1_1kwhn")]
+script = ExtResource("2_682rg")
 
 [node name="HSlider" parent="." index="1"]
 value = 1.0

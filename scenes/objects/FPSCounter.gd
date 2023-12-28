@@ -7,7 +7,8 @@ func _ready():
 	
 	
 func update_visibilty():
-	$".".visible = Settings.display_fps
+#	$".".visible = Settings.display_fps
+	pass
 	
 
 func on_display_fps_visiblity_changed():

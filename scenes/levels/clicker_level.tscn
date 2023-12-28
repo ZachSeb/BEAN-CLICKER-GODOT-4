@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkpkc2jsrkyj5"]
+[gd_scene load_steps=7 format=3 uid="uid://bkpkc2jsrkyj5"]
 
 [ext_resource type="Script" path="res://save_file.gd" id="1_0tll7"]
 [ext_resource type="Script" path="res://scenes/levels/clicker_level.gd" id="1_jjpxq"]
 [ext_resource type="PackedScene" uid="uid://cfwojk37ldidu" path="res://scenes/objects/background.tscn" id="2_eewli"]
 [ext_resource type="PackedScene" uid="uid://hyvaqgnbrom1" path="res://scenes/objects/ui.tscn" id="3_pl4xx"]
 [ext_resource type="PackedScene" uid="uid://qm7ka0dgvc3h" path="res://scenes/playlist.tscn" id="6_4pqdu"]
-[ext_resource type="PackedScene" uid="uid://c7x1r870f8gmy" path="res://scenes/settings.tscn" id="6_eo283"]
 [ext_resource type="PackedScene" uid="uid://1napypaktu83" path="res://scenes/user.tscn" id="6_j0cuc"]
 
 [node name="ClickerLevel" type="Node2D"]
@@ -16,8 +15,6 @@ script = ExtResource("1_jjpxq")
 [node name="UI" parent="." instance=ExtResource("3_pl4xx")]
 
 [node name="User" parent="." instance=ExtResource("6_j0cuc")]
-
-[node name="Settings" parent="User" instance=ExtResource("6_eo283")]
 
 [node name="Save" type="Node" parent="User"]
 script = ExtResource("1_0tll7")

@@ -1,21 +1,17 @@
 extends Control
 class_name SettingsSlider
 
-@onready var slider = get_node("HSlider")
-
 
 func _ready():
-	slider.value_changed.connect(on_slider_changed)
-	SaveFile.file_loaded.connect(refresh)
+	refresh()
 	
-
-func on_slider_changed(value: float) -> void:
-#	AudioServer.set_bus_volume_db(
-#		bus_index,
-#		linear_to_db(value)
-#	)
-	print(value)
+	SaveFile.file_loaded.connect(refresh)
+	$HSlider.value_changed.connect(on_slider_changed)
 
 
+func on_slider_changed(value):
+	pass
+	
+	
 func refresh():
-	print("refresh")
+	pass

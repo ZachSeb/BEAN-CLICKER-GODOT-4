@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7x1r870f8gmy"]
-
-[ext_resource type="Script" path="res://globals/settings.gd" id="1_408jg"]
-
-[node name="Settings" type="Node" groups=["Persist"]]
-script = ExtResource("1_408jg")

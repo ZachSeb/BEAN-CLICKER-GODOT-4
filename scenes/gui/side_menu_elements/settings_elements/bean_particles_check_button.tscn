@@ -6,5 +6,8 @@
 [node name="BeanParticlesCheckButton" instance=ExtResource("1_lqjgu")]
 script = ExtResource("2_pn8dm")
 
+[node name="CheckButton" parent="." index="1"]
+button_pressed = true
+
 [node name="Label" parent="." index="2"]
 text = "Bean Particles"

@@ -1,7 +1,7 @@
 extends Node
 
 const save_path = "user://savegame.save"
-signal file_loaded()
+signal file_loaded
 
 
 func save_file():
@@ -15,7 +15,7 @@ func save_file():
 
 		# Check the node has a save function.
 		if !node.has_method("save_stats"):
-			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			print("persistent node '%s' is missing a save_stats() function, skipped" % node.name)
 			continue
 
 		# Call the node's save function.
@@ -23,9 +23,10 @@ func save_file():
 
 		# JSON provides a static method to serialized JSON string.
 		var json_string = JSON.stringify(node_data)
-
 		# Store the save dictionary as a new line in the save file.
 		file.store_line(json_string)
+		
+	file_loaded.emit()
 	
 
 func load_file():
@@ -35,10 +36,6 @@ func load_file():
 	# We need to revert the game state so we're not cloning objects
 	# during loading. This will vary wildly depending on the needs of a
 	# project, so take care with this step.
-	# For our example, we will accomplish this by deleting saveable objects.
-#	var save_nodes = get_tree().get_nodes_in_group("Persist")
-#	for i in save_nodes:
-#		i.queue_free()
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
@@ -77,7 +74,8 @@ func load_file():
 
 		
 func reset_file():
-	pass
+	DirAccess.remove_absolute(save_path)
+	get_tree().quit()
 	
 	
 #func create_user_data() -> Dictionary:

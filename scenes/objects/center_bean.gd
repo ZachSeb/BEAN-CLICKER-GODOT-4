@@ -26,12 +26,12 @@ func _ready():
 	bean_button.scale = Vector2(default_scale, default_scale)
 	
 	
-func on_toggle_particles_changed(particle: String):
-	if particle == "Bean" and not Settings.bean_particles:
+func on_toggle_particles_changed(particle: String, toggle: bool):
+	if particle == "Bean" and not toggle:
 		for bean in $"../MiniBeans".get_children():
 			bean.queue_free()
 	
-	elif particle == "Text" and not Settings.text_particles:
+	elif particle == "Text" and not toggle:
 		for text in $TextParticles.get_children():
 			text.queue_free()
 		
